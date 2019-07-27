@@ -17,7 +17,7 @@ class SchoolClassesController < ApplicationController
     end
 
     def update
-        @school_class = SchoolClass.update(school_class_params)
+        @school_class.update(school_class_params)
         redirect_to school_class_path(@school_class)
     end
 
@@ -29,5 +29,6 @@ class SchoolClassesController < ApplicationController
 
         def school_class_params
             params.require(:school_class).permit(:title, :room_number)
+            # params.require(:school_class).permit!
         end
 end
